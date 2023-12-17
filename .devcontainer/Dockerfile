@@ -14,11 +14,11 @@ RUN apt install zsh -y && \
 
 # Poetry
 RUN curl -sSL https://install.python-poetry.org | \
-    POETRY_VIRTUALENVS_IN_PROJECT=true \
     POETRY_NO_INTERACTION=true \
     POETRY_HOME=/opt/poetry \
     python3 -
 ENV PATH="$PATH:/opt/poetry/bin"
+ENV POETRY_VIRTUALENVS_IN_PROJECT=true
 
 # Set welcome message
 RUN printf "fortune | cowsay | lolcat\n\n" >> ~/.zshrc
