@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ../../:/workspace:cached
+      - ../:/workspace:cached
     depends_on:
       - db
     network_mode: service:db
